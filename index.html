@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+/>
+<link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css" />
+<link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css" />
+<link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css" />
+<link
+  rel="stylesheet"
+  href="node_modules/reveal.js/plugin/highlight/zenburn.css"
+/>
+
+<title>GCN: General Coordinates Network</title>
+<div class="reveal">
+  <div class="slides">
+    <section data-markdown>
+      <textarea data-template>
+        ## Install Python client
+
+        Run this command to install with [pip](https://pip.pypa.io/):
+
+        ```
+        pip install gcn-kafka
+        ```
+
+        or this command to install with with [conda](https://docs.conda.io/):
+
+        ```
+        conda install -c conda-forge gcn-kafka
+        ```
+
+        ---
+
+        ## Connect to Kafka
+
+        ```python
+        from gcn_kafka import Consumer
+
+        consumer = Consumer(
+          client_id='fill me in',
+          client_secret='fill me in',
+          domain='test.gcn.nasa.gov'
+        )
+        ```
+
+        ---
+
+        ## List all topics
+
+        ```python
+        print(consumer.list_topics().topics)
+        ```
+        
+        ---
+
+        ## Subscribe to topics and receive alerts
+
+        ```python
+        consumer.subscribe([
+          'gcn.classic.text.LVC',
+          'gcn.classic.text.LVC_EARLY_WARNING',
+          'gcn.classic.text.LVC_INITIAL',
+          'gcn.classic.text.LVC_PRELIMINARY',
+          'gcn.classic.text.LVC_RETRACTION',
+          'gcn.classic.text.LVC_UPDATE'
+        ])
+        while True:
+            for message in consumer.consume():
+                print(message.value())
+        ```
+      </textarea>
+    </section>
+  </div>
+</div>
+
+<script src="node_modules/reveal.js/dist/reveal.js"></script>
+<script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
+<script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+  });
+</script>
