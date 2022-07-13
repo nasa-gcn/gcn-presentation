@@ -6,15 +6,73 @@
 />
 <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css" />
 <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css" />
-<link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css" />
+<link rel="stylesheet" href="node_modules/reveal.js/dist/theme/white.css" />
 <link
   rel="stylesheet"
   href="node_modules/reveal.js/plugin/highlight/zenburn.css"
 />
+<style>
+  .slides section,
+  .slides h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+  }
+
+  .reveal h1 {
+    text-transform: none;
+    border-bottom: 3pt solid #fc3d21;
+    width: min-content;
+  }
+
+  .reveal h2 {
+    color: #fc3d21;
+    text-transform: none;
+  }
+
+  .nasa-red {
+    color: #fc3d21;
+  }
+
+  .nasa-blue {
+    color: #0b3d91;
+  }
+</style>
 
 <title>GCN: General Coordinates Network</title>
 <div class="reveal">
   <div class="slides">
+    <section>
+      <div style="text-align: right">
+        <small style="vertical-align: middle"
+          >National Aeronautics and<br />Space Administration</small
+        >
+        <img
+          src="img/nasa-logo.svg"
+          width="150"
+          alt="NASA logo"
+          style="
+            vertical-align: middle;
+            border-left: 2pt solid #666;
+            padding-left: 6pt;
+            margin-left: 6pt;
+          "
+        />
+      </div>
+      <h1>General Coordinates Network</h1>
+      <p>NASA’s Next Generation Time-Domain and Multimessenger Alert System</p>
+      <p>
+        <small
+          >A service of the
+          <a href="https://science.gsfc.nasa.gov/astrophysics/"
+            >Astrophysics Science Division</a
+          >
+          at <a href="https://www.nasa.gov/">NASA</a>’s
+          <a href="https://www.nasa.gov/goddard"
+            >Goddard Space Flight Center</a
+          ></small
+        >
+      </p>
+    </section>
     <section data-markdown>
       <textarea data-template>
         ## Install Python client
@@ -83,7 +141,14 @@
   Reveal.initialize({
     hash: true,
 
+    width: 1600,
+    height: 900,
+
     // Learn about plugins: https://revealjs.com/plugins/
     plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+
+    markdown: {
+      gfm: true,
+    },
   });
 </script>
