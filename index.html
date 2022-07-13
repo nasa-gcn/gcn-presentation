@@ -16,6 +16,7 @@
   .slides h1 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: left;
+    width: max-content;
   }
 
   .reveal h1 {
@@ -57,7 +58,7 @@
           "
         />
       </div>
-      <h1 style="width: min-content"">General Coordinates Network</h1>
+      <h1>General<br>Coordinates<br>Network</h1>
       <p>NASA’s Next Generation Time-Domain and Multimessenger Alert System</p>
       <p>
         <small
@@ -75,6 +76,40 @@
     </section>
     <section data-markdown>
       <textarea data-template>
+        # Gamma-ray<br>Coordinates<br>Network
+
+        ---
+
+        * History, motivation, major discoveries
+        * What's changed in the scientific landscape
+          * Time-domain astronomy has become mainstream
+          * Multimessenger astronomy
+        * What's changed in the infrastructure technology landscape
+          * What problems with GCN we wanted to solve
+          * Why Kafka
+
+        ---
+
+        # Introducing<br>the new GCN
+
+        ---
+
+        * What will stay the same
+        * New web site
+        * New Kafka broker
+        * Why switch
+
+        ---
+
+        # Streaming GCN<br>Notices in Python
+
+        ---
+
+        * Walkthrough of web site
+        * Screen video grabs of sign in, credential creation
+        * Code walkthrough
+        * What you can do with the data
+
         ## Install Python client
 
         Run this command to install with [pip](https://pip.pypa.io/):
@@ -128,6 +163,18 @@
             for message in consumer.consume():
                 print(message.value())
         ```
+
+        ---
+
+        # What's next for GCN?
+
+        ---
+
+        * Self-service GCN Notice subscriptions over email
+        * Modernization of GCN Circulars: self-service subscription management, peer endorsement system, faster delivery, correct handling of Unicode
+        * Integrated GCN Notice and Circular archive (GCN Viewer)
+        * Unified schema
+        * Interoperability with SCiMMA?
       </textarea>
     </section>
   </div>
