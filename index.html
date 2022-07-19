@@ -40,6 +40,15 @@
   .nasa-blue {
     color: #0b3d91;
   }
+
+  .image-and-caption {
+    display: grid;
+    grid-template-columns: max-content auto;
+  }
+
+  .image-and-caption * {
+    align-self: center;
+  }
 </style>
 
 <title>GCN: General Coordinates Network</title>
@@ -78,6 +87,7 @@
       </p>
       <p><a href="https://gcn.nasa.gov/">https://gcn.nasa.gov</a></p>
     </section>
+
     <section data-markdown>
       <textarea data-template>
         # Gamma-ray<br>Coordinates<br>Network
@@ -96,6 +106,34 @@
 
         # Introducing<br>the new GCN
 
+      </textarea>
+    </section>
+
+    <section>
+      <div class="image-and-caption">
+        <img
+          src="img/landing-page-screenshot.png"
+          alt="Screen shot of new web site"
+          width="1024"
+        />
+        <div data-markdown>
+          <textarea data-template>
+            ## New GCN web site
+            at https://gcn.nasa.gov
+            * Updated look and feel
+            * More accessible, based on [US Web Design System](https://designsystem.digital.gov)
+            * Single sign on with:
+              * email and password
+              * Google
+              * Facebook
+              * LaunchPad (for NASA employees and affiliates)
+          </textarea>
+        </div>
+      </div>
+    </section>
+
+    <section data-markdown>
+      <textarea data-template>
         ---
 
         * What will stay the same
