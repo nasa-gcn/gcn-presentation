@@ -80,6 +80,7 @@
     </section>
     <section data-markdown>
       <textarea data-template>
+        
         # Gamma-ray<br>Coordinates<br>Network
 
         ---
@@ -183,10 +184,15 @@
         ---
 
         * Self-service GCN Notice subscriptions over email
-        * Modernization of GCN Circulars: self-service subscription management, peer endorsement system, faster delivery, correct handling of Unicode
+        * Modernization of GCN Circulars
+          * self-service subscription management, peer endorsement system
+          * faster delivery, correct handling of Unicode and line breaks
+          * parseable content (e.g. keywords, markdown support, embedded references)
         * Integrated GCN Notice and Circular archive (GCN Viewer)
-        * Unified schema
-        * Interoperability with SCiMMA?
+        * Unified schema with common core between instruments
+          * Queriable event-based database
+          * Avro and JSON output formats
+        * Interoperability with other Kafka brokers (e.g. SCiMMA)
       </textarea>
     </section>
   </div>
