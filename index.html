@@ -53,16 +53,21 @@
   }
 
   .reveal h2 {
-    color: #fc3d21;
     text-transform: none;
   }
 
-  .nasa-red {
+  .nasa-red,
+  .no-red,
+  .reveal h2 {
     color: #fc3d21;
   }
 
   .nasa-blue {
     color: #0b3d91;
+  }
+
+  .yes-green {
+    color: #009900;
   }
 
   .image-and-caption {
@@ -72,6 +77,17 @@
 
   .image-and-caption * {
     align-self: center;
+  }
+
+  .why-switch th img {
+    width: min-content;
+    height: 1li;
+    transform: scale(1.25);
+    vertical-align: middle;
+  }
+
+  .why-switch td {
+    font-size: xx-large;
   }
 </style>
 
@@ -98,7 +114,8 @@
       <h1>General<br />Coordinates<br />Network</h1>
       <p>NASA’s Next Generation Time-Domain and Multimessenger Alert System</p>
       <p>
-        <small>A service of the
+        <small
+          >A service of the
           <a href="https://science.gsfc.nasa.gov/astrophysics/">
             Astrophysics Science Division
           </a>
@@ -240,6 +257,96 @@
           </textarea>
         </div>
       </div>
+    </section>
+
+    <section class="why-switch">
+      <h2>Why switch to the new GCN?</h2>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>GCN Classic</th>
+            <th>GCN Classic over Kafka</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>
+              <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/2.13.3/img/usa-icons/account_box.svg?svgr" alt="">
+              Self-service
+            </th>
+            <td>
+              <strong class="no-red">NO.</strong> Users need to contact
+              administrator in order to make account and subscription changes
+            </td>
+            <td>
+              <strong class="yes-green">YES.</strong> Manage your own
+              account and subscription settings through this web site
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/2.13.3/img/material-icons/connect_without_contact.svg" alt="">
+              Open standards
+            </th>
+            <td>
+              <strong class="no-red">NO.</strong> Notices are sent using
+              three custom protocols
+            </td>
+            <td>
+              <strong class="yes-green">YES.</strong> Notices sent using
+              one standard protocol,
+              <a href="https://kafka.apache.org" rel="external" class="usa-link"
+                >Apache Kafka</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/2.13.3/img/usa-icons/github.svg" alt="">
+              Open software
+            </th>
+            <td>
+              <strong class="no-red">NO.</strong> Custom software needed
+              to receive notices
+            </td>
+            <td>
+              <strong class="yes-green">YES.</strong> Receive notices
+              using
+              <a href="/docs/client" class="usa-link">open-source software</a>
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/2.13.3/img/usa-icons/cloud.svg" alt="">
+              Highly Available
+            </th>
+            <td>
+              <strong class="no-red">NO.</strong> Notices are broadcast
+              by a single server
+            </td>
+            <td>
+              <strong class="yes-green">YES.</strong> Notices are
+              broadcast by a cluster of highly-available Kafka brokers in the
+              cloud
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/2.13.3/img/usa-icons/security.svg" alt="">
+              Secure
+            </th>
+            <td>
+              <strong class="no-red">NO.</strong> Notices are sent as
+              plaintext
+            </td>
+            <td>
+              <strong class="yes-green">YES.</strong> Notices are
+              protected with SSL/TLS
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <section data-markdown>
