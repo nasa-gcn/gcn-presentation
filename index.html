@@ -40,6 +40,15 @@
   .nasa-blue {
     color: #0b3d91;
   }
+
+  .image-and-caption {
+     display: grid;
+     grid-template-columns: max-content auto;
+   }
+
+   .image-and-caption * {
+     align-self: center;
+   }
 </style>
 
 <title>GCN: General Coordinates Network</title>
@@ -81,11 +90,63 @@
     <section data-markdown>
       <textarea data-template>
         # Gamma-ray<br>Coordinates<br>Network
+      </textarea>
+      </section>
 
-        ---
-        * Legacy GCN (https://gcn.gsfc.nasa.gov) system (now referred to as GCN Classic) has been the backbone of the high-energy transient astronomy community (especially gamma-ray bursts) since the 1990s
-          * Enabled seminal breakthroughs by rapidly connecting astronomers using public Internet infrastructure
-          * Rapid community growth in recent years has required significant implementation effort, especially given growth of gravitational wave astronomy
+      <section>
+        <div class="image-and-caption">
+          <div>
+            <h2>Realtime Alerts <br> Born of Necessity</h2>
+            <img
+              src="img/cgro-with-batse-diagram.jpg"
+              alt="CGRO with BATSE Instrument"
+              width="800"
+            />
+          </div>
+          <div data-markdown>
+            <textarea data-template>
+              * Compton Gamma-ray Observatory onboard recorder failed in 1992 
+              * Opportunity to stream science data to the ground in realtime 
+              * BAtse COordinates DIstribution NEtwork (BACODINE) was built to receive those alerts and distribute them to the worldwide follow-up community
+            </textarea>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div data-markdown>
+          <textarea data-template>
+            ## Early History of GCN
+            <img
+              src="img/gcn_history.pdf"
+              alt="GCN history timeline"
+              width="1500"
+            />
+            * BACODINE provided new alert formats (phone, email, socket and pager)
+            * As new triggering observatories were added, it evolved into the Gamma-ray burst Coordinates Network
+          </textarea>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-and-caption">
+          <img
+            src="img/GCN_classic_logo.gif"
+            alt="GCN Classic Logo"
+            width="700"
+          />
+          <div data-markdown>
+            <textarea data-template>
+              * GCN became the Gamma-ray Coordinates Network serving additional transient source types
+              * Enabled seminal breakthroughs in astrophysics by rapidly connecting astronomers using public Internet infrastructure
+            </textarea>
+          </div>
+        </div>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+
         * GCN Products
           * Machine-readable notices (plain text, VOEvent, 160-bye binary) by space and ground-based observatories
           * GCN Circulars - currated community email message board (>30k to date)
