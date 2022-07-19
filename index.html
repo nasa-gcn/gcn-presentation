@@ -80,9 +80,9 @@
   <div class="slides">
     <section>
       <div style="text-align: right">
-        <small style="vertical-align: middle"
-          >National Aeronautics and<br />Space Administration</small
-        >
+        <small style="vertical-align: middle">
+          National Aeronautics and<br />Space Administration
+        </small>
         <img
           src="img/nasa-logo.svg"
           width="150"
@@ -98,16 +98,16 @@
       <h1>General<br />Coordinates<br />Network</h1>
       <p>NASA’s Next Generation Time-Domain and Multimessenger Alert System</p>
       <p>
-        <small
-          >A service of the
-          <a href="https://science.gsfc.nasa.gov/astrophysics/"
-            >Astrophysics Science Division</a
-          >
-          at <a href="https://www.nasa.gov/">NASA</a>’s
-          <a href="https://www.nasa.gov/goddard"
-            >Goddard Space Flight Center</a
-          ></small
-        >
+        <small>A service of the
+          <a href="https://science.gsfc.nasa.gov/astrophysics/">
+            Astrophysics Science Division
+          </a>
+          at
+          <a href="https://www.nasa.gov/">NASA</a>’s
+          <a href="https://www.nasa.gov/goddard">
+            Goddard Space Flight Center
+          </a>
+        </small>
       </p>
       <p><a href="https://gcn.nasa.gov/">https://gcn.nasa.gov</a></p>
     </section>
@@ -116,31 +116,34 @@
       <textarea data-template>
         # Gamma-ray<br>Coordinates<br>Network
       </textarea>
-      </section>
+    </section>
 
-      <section>
-        <div class="image-and-caption">
-          <div>
-            <h2>Realtime Alerts <br> Born of Necessity</h2>
-            <img
-              src="img/cgro-with-batse-diagram.jpg"
-              alt="CGRO with BATSE Instrument"
-              width="800"
-            />
-          </div>
-          <div data-markdown>
-            <textarea data-template>
-              * Compton Gamma-ray Observatory onboard recorder failed in 1992 
-              * Opportunity to stream science data to the ground in realtime 
-              * BAtse COordinates DIstribution NEtwork (BACODINE) was built to receive those alerts and distribute them to the worldwide follow-up community
-            </textarea>
-          </div>
+    <section>
+      <div class="image-and-caption">
+        <div>
+          <h2>
+            Realtime Alerts <br />
+            Born of Necessity
+          </h2>
+          <img
+            src="img/cgro-with-batse-diagram.jpg"
+            alt="CGRO with BATSE Instrument"
+            width="800"
+          />
         </div>
-      </section>
-
-      <section>
         <div data-markdown>
           <textarea data-template>
+            * Compton Gamma-ray Observatory onboard recorder failed in 1992
+            * Opportunity to stream science data to the ground in realtime
+            * BAtse COordinates DIstribution NEtwork (BACODINE) was built to receive those alerts and distribute them to the worldwide follow-up community
+          </textarea>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div data-markdown>
+        <textarea data-template>
             ## Early History of GCN
             <img
               src="img/gcn_history.pdf"
@@ -149,28 +152,29 @@
             />
             * BACODINE provided new alert formats (phone, email, socket and pager)
             * As new triggering observatories were added, it evolved into the Gamma-ray burst Coordinates Network
+          </textarea
+        >
+      </div>
+    </section>
+
+    <section>
+      <div class="image-and-caption">
+        <img
+          src="img/GCN_classic_logo.gif"
+          alt="GCN Classic Logo"
+          width="700"
+        />
+        <div data-markdown>
+          <textarea data-template>
+            * GCN became the Gamma-ray Coordinates Network serving additional transient source types
+            * Enabled seminal breakthroughs in astrophysics by rapidly connecting astronomers using public Internet infrastructure
           </textarea>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section>
-        <div class="image-and-caption">
-          <img
-            src="img/GCN_classic_logo.gif"
-            alt="GCN Classic Logo"
-            width="700"
-          />
-          <div data-markdown>
-            <textarea data-template>
-              * GCN became the Gamma-ray Coordinates Network serving additional transient source types
-              * Enabled seminal breakthroughs in astrophysics by rapidly connecting astronomers using public Internet infrastructure
-            </textarea>
-          </div>
-        </div>
-      </section>
-
-      <section data-markdown>
-        <textarea data-template>
+    <section data-markdown>
+      <textarea data-template>
 
         * GCN Products
           * Machine-readable notices (plain text, VOEvent, 160-bye binary) by space and ground-based observatories
@@ -182,10 +186,10 @@
           * Straightforward workflow for instrument teams to update message schema and database
           * Secure connections and message verification
           * Infrastructure for development of rich ecosystem of web applications
-        * New GCN implementation 
+        * New GCN implementation
           * Apache Kafka protocol widely adopted within optical transient community (e.g. Rubin)
           * Rich environment of open source and commercial tools
-          
+
         ---
 
         # Introducing<br>the new GCN
@@ -235,8 +239,6 @@
 
     <section data-markdown>
       <textarea data-template>
-        ---
-
         * What will stay the same
         * New web site
         * New Kafka broker
@@ -288,7 +290,7 @@
         ```python
         print(consumer.list_topics().topics)
         ```
-        
+
         ---
 
         ## Subscribe to topics and receive alerts
