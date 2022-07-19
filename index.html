@@ -83,15 +83,23 @@
         # Gamma-ray<br>Coordinates<br>Network
 
         ---
-
-        * History, motivation, major discoveries
-        * What's changed in the scientific landscape
-          * Time-domain astronomy has become mainstream
-          * Multimessenger astronomy
-        * What's changed in the infrastructure technology landscape
-          * What problems with GCN we wanted to solve
-          * Why Kafka
-
+        * Legacy GCN (https://gcn.gsfc.nasa.gov) system (now referred to as GCN Classic) has been the backbone of the high-energy transient astronomy community (especially gamma-ray bursts) since the 1990s
+          * Enabled seminal breakthroughs by rapidly connecting astronomers using public Internet infrastructure
+          * Rapid community growth in recent years has required significant implementation effort, especially given growth of gravitational wave astronomy
+        * GCN Products
+          * Machine-readable notices (plain text, VOEvent, 160-bye binary) by space and ground-based observatories
+          * GCN Circulars - currated community email message board (>30k to date)
+        ---
+        * GCN Modernization
+          * Self-service (consumers) rather than curated access
+          * High reliability and availability
+          * Straightforward workflow for instrument teams to update message schema and database
+          * Secure connections and message verification
+          * Infrastructure for development of rich ecosystem of web applications
+        * New GCN implementation 
+          * Apache Kafka protocol widely adopted within optical transient community (e.g. Rubin)
+          * Rich environment of open source and commercial tools
+          
         ---
 
         # Introducing<br>the new GCN
