@@ -90,6 +90,21 @@
   .why-switch td {
     font-size: xx-large;
   }
+
+  .conclusion-links {
+    padding-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2em;
+  }
+
+  .conclusion-links img {
+    width: min-content;
+    height: 1li;
+    transform: translateX(50%) scale(3);
+    margin-right: 30px;
+    vertical-align: bottom;
+  }
 </style>
 
 <title>GCN: General Coordinates Network</title>
@@ -427,6 +442,33 @@
         * Unified schema
         * Interoperability with SCiMMA?
       </textarea>
+    </section>
+
+    <section class="conclusion-links">
+      <h1>Thanks for listening!</h1>
+      <p>Web site: <a href="https://gcn.nasa.gov/">https://gcn.nasa.gov</a></p>
+      <p>This presentation: <a href="https://nasa-gcn.github.io/gcn-presentation/">https://nasa-gcn.github.io/gcn-presentation/</a></p>
+      <div class="conclusion-links">
+        <div>
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/2.13.3/img/usa-icons/help.svg" alt=""> <strong>Questions or comments?</strong>
+          <a href="https://heasarc.gsfc.nasa.gov/cgi-bin/Feedback?selected=kafkagcn">
+            Contact GCN directly
+          </a>
+        </div>
+        <div>
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/2.13.3/img/usa-icons/bug_report.svg" alt=""> <strong>Have you found a bug in GCN?</strong>
+          <a href="https://github.com/nasa-gcn/gcn.nasa.gov/issues">
+            Open an issue
+          </a>
+        </div>
+        <div>
+          <img src="https://cdnjs.cloudflare.com/ajax/libs/uswds/2.13.3/img/usa-icons/github.svg" alt="">
+          <strong>Want to contribute code to GCN?</strong>
+          <a href="https://github.com/nasa-gcn">
+            Get involved on GitHub
+          </a>
+        </div>
+      </div>
     </section>
   </div>
 </div>
