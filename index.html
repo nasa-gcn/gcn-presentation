@@ -79,6 +79,12 @@
     align-self: center;
   }
 
+  .split-column {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 2em;
+  }
+
   .why-switch th img {
     width: min-content;
     height: 1li;
@@ -180,48 +186,101 @@
           width="1500"
         />
         * BACODINE provided new alert formats (phone, email, socket, and pager)
-        * As new triggering observatories were added, it evolved into the Gamma-ray burst Coordinates Network
+        * New instruments and transient types led to the Gamma-ray Coordinates Network
       </textarea>
     </section>
 
     <section>
-      <div class="image-and-caption">
-        <img
-          src="img/GCN_classic_logo.gif"
-          alt="GCN Classic Logo"
-          width="700"
-        />
+        <h2>GCN Enabled Seminal Breakthroughs in Astrophysics</h2>
+        <div class="image-and-caption">
+          <img
+            src="img/GCN_classic_logo.gif"
+            alt="GCN Classic Logo"
+            width="700"
+          />
+          <div data-markdown>
+            <textarea data-template>
+              The GCN community enabled worldwide follow-up observations that revealed the nature of gamma-ray bursts:
+              * Afterglows and redshifts confirmed their distant, extragalactic origin
+              * Supernova-GRBs established massive stellar deaths as the cause of long GRBs
+              * Afterglow and host studies established neutron star mergers as the cause of short GRBs
+            </textarea>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>There are two kinds of GCN data products:</h2>
+      <div class="split-column">
         <div data-markdown>
           <textarea data-template>
-            * GCN became the Gamma-ray Coordinates Network serving additional transient source types
-            * Enabled seminal breakthroughs in astrophysics by rapidly connecting astronomers using public Internet infrastructure
+            ### GCN Notices
+            <img
+              src="img/gcn_notice_example.svg"
+              alt="GCN Notices Example"
+              width="600"
+            />
+            * Machine readable/generated
+            * Fixed, predefined format
+            * Schema specific to each instrument and type
+          </textarea>
+        </div>
+        <div data-markdown>
+          <textarea data-template>
+            ### GCN Circulars
+            <img
+              src="img/gcn_circular_example.svg"
+              alt="GCN Circulars Example"
+              width="600"
+            />
+            * Human readable/written (sometimes automated)
+            * Freeform text (with established style)
+            * Citable (but not peer-reviewed)
           </textarea>
         </div>
       </div>
     </section>
 
-    <section data-markdown>
-      <textarea data-template>
+    <section>
+      <h2>The Changing Scientific Landscape</h2>
+      <div class="image-and-caption">
+        <div>
+          <img
+            src="img/NeutronStarMerger.png"
+            alt="Neutron Star Merger"
+            width="700"
+          />
+        </div>
+        <div data-markdown>
+          <textarea data-template>
+            GCN is constantly evolving to serve new transients, messengers, and observatories:
+            * Gravitational wave events (GW150914, GW170817)
+            * High-energy neutrinos (IC170922A)
+            * Tidal disruption events (Swift J1644+57)
+            * Magnetar giant flares (200415A)
+          </textarea>
+        </div>
+      </div>
+    </section>
 
-        * GCN Products
-          * Machine-readable notices (plain text, VOEvent, 160-bye binary) by space and ground-based observatories
-          * GCN Circulars - currated community email message board (>30k to date)
-        ---
-        * GCN Modernization
-          * Self-service (consumers) rather than curated access
-          * High reliability and availability
-          * Straightforward workflow for instrument teams to update message schema and database
-          * Secure connections and message verification
-          * Infrastructure for development of rich ecosystem of web applications
-        * New GCN implementation
-          * Apache Kafka protocol widely adopted within optical transient community (e.g. Rubin)
-          * Rich environment of open source and commercial tools
+    <section>
+      <h2>The Changing Technological Landscape</h2>
+      <div class="image-and-caption">
+        <img src="img/rubin.png" alt="Vera C. Rubin Observatory" width="700">
+        <div data-markdown>
+          <textarea data-template>
+            * Internet standards have led to new, better ways to serialize astronomy data (VOEvent, JSON, Avro, etc.)
+            * Encryption is necessary on the modern Internet (e.g. https)
+            * Industry has developed general time-series databases and streaming frameworks
+            * The Vera C. Rubin Observatory will use Apache Kafka to distribute transient alerts as its primary data product
+            * Several experiments are following suit
+          </textarea>
+        </div>
+      </div>
+    </section>
 
-        ---
-
-        # Introducing<br>the new GCN
-
-      </textarea>
+    <section>
+      <h1>Introducing<br>the new GCN</h1>
     </section>
 
     <section data-markdown>
