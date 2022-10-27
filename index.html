@@ -284,20 +284,61 @@
     </section>
 
     <section>
-      <div class="image-and-caption">
-        <img
-          src="img/streaming-methods.svg"
-          alt="GCN streaming methods"
-          width="1024"
-        />
+      <section>
+        <div class="image-and-caption">
+          <img
+            src="img/streaming-methods.svg"
+            alt="GCN streaming methods"
+            width="1024"
+          />
+          <div data-markdown>
+            <textarea data-template>
+              ## The New GCN is built on Kafka
+              * GCN Classic provides three formats over _three custom protocols_
+              * GCN Classic over Kafka provides all three formats over _one standard protocol_: Apache Kafka
+            </textarea>
+          </div>
+        </div>
+      </section>
+      <section>
         <div data-markdown>
           <textarea data-template>
-            ## The New GCN is built on Kafka
-            * GCN Classic provides three formats over _three custom protocols_
-            * GCN Classic over Kafka provides all three formats over _one standard protocol_: Apache Kafka
+            ## What is Kafka
+            * Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications. https://kafka.apache.org/
           </textarea>
         </div>
-      </div>
+      </section>
+      <section>
+        <div data-markdown>
+          <textarea data-template>
+            ## Kafka throughout NASA 
+            * NASA Kafka Community Group
+              * Commercially managed Kafka through Confluent Platform
+              * From Air-traffic to the Deep space Network
+            * Supporting Confluent Cloud FedRAMP approval
+            * LIGO transitioning to SciTokens (based on OpenID Connect), allows delegation of access to high-performance computing workflows
+          </textarea>
+        </div>
+      </section>
+      <section>
+        <div data-markdown>
+          <textarea data-template>
+            ## Kafka Broker
+            * OpenID Connect to keep our authentication and authorization decoupled from kafka broker
+            * unmodified stock kafka broker - don’t need to side load any of our code
+              * Much less backend software to maintain
+              * Works with self-managed kafka broker or by confluent or amazon (vendor neutral)
+          </textarea>
+        </div>
+      </section>
+      <section>
+        <div data-markdown>
+          <textarea data-template>
+            ## Future Plans?
+            * EC2 -> Kubernetes -> Confluent Cloud
+          </textarea>
+        </div>
+      </section>
     </section>
 
     <section class="why-switch">
@@ -390,26 +431,43 @@
     </section>
 
     <section>
-      <div class="image-and-caption">
-        <img
+      <section>
+        <div class="image-and-caption">
+          <img
           src="img/landing-page-screenshot.png"
           alt="Screen shot of new web site"
           width="1024"
-        />
-        <div data-markdown>
-          <textarea data-template>
-            ## New GCN web site
-            at https://gcn.nasa.gov
-            * Updated look and feel
-            * More accessible, based on [US Web Design System](https://designsystem.digital.gov)
-            * Single sign on with:
+          />
+          <div data-markdown>
+            <textarea data-template>
+              ## New GCN web site
+              at https://gcn.nasa.gov
+              * Updated look and feel
+              * More accessible, based on [US Web Design System](https://designsystem.digital.gov)
+              * Single sign on with:
               * email and password
               * Google
               * Facebook
               * LaunchPad (for NASA employees and affiliates)
+            </textarea>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div data-markdown>
+          <textarea data-template>
+            * USWDS - used by most federal agencies - emphasis on accessibility
+              * NASAWDS - NASA customization of USWDS, we’ve contributed patches upstream
+            * 100% typescript - modern way to build web apps - single codebase for server and client side
+              * compared to many astro apps that use flask and django
+            * open source website - issues + feedback
+            * continuously deployed with GitHub actions
+            * hosted on AWS Lambda - scales effortlessly
+            * early adopters of Remix - contribute regularly
+            * Architect - infrastructure as code tool for server less deployments on AWS - we contribute to that
           </textarea>
         </div>
-      </div>
+      </section>
     </section>
 
     <section>
