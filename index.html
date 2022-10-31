@@ -309,7 +309,7 @@
           />
           <div data-markdown>
             <textarea data-template>
-              ## What is Kafka
+              ## What is Kafka?
               Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications. https://kafka.apache.org/
             </textarea>
           </div>
@@ -318,31 +318,28 @@
       <section>
         <div data-markdown>
           <textarea data-template>
-            ## Kafka throughout NASA 
-            * NASA Kafka Community Group
-              * Commercially managed Kafka through Confluent Platform
-              * From Air-traffic to the Deep Space Network
-            * Supporting Confluent Cloud FedRAMP approval
+            ## Kafka is widely used at NASA
+            * Existing Kafka applications at NASA include:
+              * GCN (Goddard Space Flight Center)
+              * Complex Event Processor - Deep Space Network (Jet Propulsion Laboratory)
+              * Enterprise Business Information Services (Jet Propulsion Laboratory)
+              * Federated Airspace Management Framework (Ames Research Center)
+            * ...plus many other applications in other Federal agencies
+            * All Federal agencies are using self-managed Kafka brokers, either Apache Kafka or Confluent Platform
+            * GCN is sponsoring [FedRAMP](https://www.fedramp.gov) authorization for [Confluent Cloud](https://www.confluent.io/confluent-cloud) to make it easy for NASA and other federal agencies to deploy Kafka software-as-a-service
           </textarea>
         </div>
       </section>
       <section>
         <div data-markdown>
           <textarea data-template>
-            ## Our Kafka Broker
-            * Unmodified stock Kafka broker
-              * Much less backend software to maintain
-              * Works with self-managed kafka broker or by confluent or amazon (vendor neutral)
-            * OpenID Connect to keep our authentication and authorization decoupled from kafka broker
-              * LIGO transitioning to SciTokens (based on OpenID Connect) <!--, allows delegation of access to high-performance computing workflows-->
-          </textarea>
-        </div>
-      </section>
-      <section>
-        <div data-markdown>
-          <textarea data-template>
-            ## Future Plans?
-            * EC2 -> Kubernetes -> Confluent Cloud
+            ## What is special about GCN's Kafka cluster?
+            * It's not special at all: it's an ordinary, stock, 3-broker Kafka cluster
+              * No custom auth extensions to side-load into the server
+              * No vendor lock-in: we could use Apache Kafka, Confluent, or Amazon MSK
+            * We use OpenID Connect for single sign on
+              * We use the same identity provider for our web site and our Kafka broker
+              * We have a straightforward path to adopting SciTokens (an HPC single sign on infrastructure based on OpenID Connect, adopted by LIGO)
           </textarea>
         </div>
       </section>
@@ -465,30 +462,22 @@
           <img
               src="img/tech-stack.svg"
               alt="Tech Stack"
-              width="1024"
+              width="800"
             />
           <div data-markdown>
             <textarea data-template>
-              ## Our Tech Stack
-              * USWDS 
-                * Emphasis on accessibility
-                * NASAWDS - NASA customization of USWDS
-              * 100% Typescript (no Flask, Django, etc.)
-                * Modern way to build web apps 
-                * Single codebase for server and client side
-              * Early adopters of [Remix](https://remix.run/) - contribute regularly
+              ## What is our tech stack?
+              * [NASAWDS](https://github.com/bruffridge/nasawds) style framework, based on the [US Web Design System](https://designsystem.digital.gov)
+                * Emphasizes accessability
+                * Used by most Federal agencies
+              * 100% [TypeScript](https://www.typescriptlang.org)
+                * Asynchronous & scalable
+                * Single codebase for server & client
+              * Early adopters of [Remix](https://remix.run/), a full-stack [React](https://reactjs.org) framework
+              * Continuously deployed on [AWS Lambda](https://aws.amazon.com/lambda/) using [GitHub Actions](https://docs.github.com/en/actions) and [Architect](https://arc.codes)
+              * 100% open source — contributions welcome! https://github.com/nasa-gcn/gcn.nasa.gov
             </textarea>
           </div>
-        </div>
-      </section>
-      <section>
-        <div data-markdown>
-          <textarea data-template>
-            * open source website - issues + feedback
-            * continuously deployed with GitHub actions
-            * hosted on AWS Lambda - scales effortlessly
-            * Architect - infrastructure as code tool for server less deployments on AWS - we contribute to that
-          </textarea>
         </div>
       </section>
     </section>
