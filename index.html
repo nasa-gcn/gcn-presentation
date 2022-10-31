@@ -284,20 +284,67 @@
     </section>
 
     <section>
-      <div class="image-and-caption">
-        <img
-          src="img/streaming-methods.svg"
-          alt="GCN streaming methods"
-          width="1024"
-        />
+      <section>
+        <div class="image-and-caption">
+          <img
+            src="img/streaming-methods.svg"
+            alt="GCN streaming methods"
+            width="1024"
+          />
+          <div data-markdown>
+            <textarea data-template>
+              ## The New GCN is built on Kafka
+              * GCN Classic provides three formats over _three custom protocols_
+              * GCN Classic over Kafka provides all three formats over _one standard protocol_: Apache Kafka
+            </textarea>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="image-and-caption">
+          <img
+            src="img/Apache_kafka.svg"
+            alt="Kafka"
+            width="512"
+          />
+          <div data-markdown>
+            <textarea data-template>
+              ## What is Kafka?
+              *Apache Kafka is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications.*
+
+              — from https://kafka.apache.org/
+            </textarea>
+          </div>
+        </div>
+      </section>
+      <section>
         <div data-markdown>
           <textarea data-template>
-            ## The New GCN is built on Kafka
-            * GCN Classic provides three formats over _three custom protocols_
-            * GCN Classic over Kafka provides all three formats over _one standard protocol_: Apache Kafka
+            ## Kafka is widely used at NASA
+            * Existing Kafka applications at NASA include:
+              * GCN (Goddard Space Flight Center)
+              * Complex Event Processor - Deep Space Network (Jet Propulsion Laboratory)
+              * Enterprise Business Information Services (Jet Propulsion Laboratory)
+              * Federated Airspace Management Framework (Ames Research Center)
+            * ...plus many other applications in other Federal agencies
+            * All Federal agencies are using self-managed Kafka brokers, either Apache Kafka or Confluent Platform
+            * GCN is sponsoring [FedRAMP](https://www.fedramp.gov) authorization for [Confluent Cloud](https://www.confluent.io/confluent-cloud) to make it easy for NASA and other federal agencies to deploy Kafka software-as-a-service
           </textarea>
         </div>
-      </div>
+      </section>
+      <section>
+        <div data-markdown>
+          <textarea data-template>
+            ## What is special about GCN's Kafka cluster?
+            * It's not special at all: it's an ordinary, stock, 3-broker Kafka cluster
+              * No custom auth extensions to side-load into the server
+              * No vendor lock-in: we could use Apache Kafka, Confluent, or Amazon MSK
+            * We use OpenID Connect for single sign on
+              * We use the same identity provider for our web site and our Kafka broker
+              * We have a straightforward path to adopting SciTokens (an HPC single sign on infrastructure based on OpenID Connect, adopted by LIGO)
+          </textarea>
+        </div>
+      </section>
     </section>
 
     <section class="why-switch">
@@ -390,26 +437,51 @@
     </section>
 
     <section>
-      <div class="image-and-caption">
-        <img
-          src="img/landing-page-screenshot.png"
-          alt="Screen shot of new web site"
-          width="1024"
-        />
-        <div data-markdown>
-          <textarea data-template>
-            ## New GCN web site
-            at https://gcn.nasa.gov
-            * Updated look and feel
-            * More accessible, based on [US Web Design System](https://designsystem.digital.gov)
-            * Single sign on with:
+      <section>
+        <div class="image-and-caption">
+          <img
+            src="img/landing-page-screenshot.png"
+            alt="Screen shot of new web site"
+            width="1024"
+          />
+          <div data-markdown>
+            <textarea data-template>
+              ## New GCN web site
+              at https://gcn.nasa.gov
+              * Updated look and feel
+              * More accessible, based on [US Web Design System](https://designsystem.digital.gov)
+              * Single sign on with:
               * email and password
               * Google
               * Facebook
               * LaunchPad (for NASA employees and affiliates)
-          </textarea>
+            </textarea>
+          </div>
         </div>
-      </div>
+      </section>
+      <section>
+        <div class="image-and-caption">
+          <img
+              src="img/tech-stack.svg"
+              alt="Tech Stack"
+              width="800"
+            />
+          <div data-markdown>
+            <textarea data-template>
+              ## What is our tech stack?
+              * [NASAWDS](https://github.com/bruffridge/nasawds) style framework, based on the [US Web Design System](https://designsystem.digital.gov)
+                * Emphasizes accessability
+                * Used by most Federal agencies
+              * 100% [TypeScript](https://www.typescriptlang.org)
+                * Asynchronous & scalable
+                * Single codebase for server & client
+              * Early adopters of [Remix](https://remix.run/), a full-stack [React](https://reactjs.org) framework
+              * Continuously deployed on [AWS Lambda](https://aws.amazon.com/lambda/) using [GitHub Actions](https://docs.github.com/en/actions) and [Architect](https://arc.codes)
+              * 100% open source — contributions welcome! https://github.com/nasa-gcn/gcn.nasa.gov
+            </textarea>
+          </div>
+        </div>
+      </section>
     </section>
 
     <section>
