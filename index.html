@@ -521,180 +521,223 @@
     </section>
 
     <section>
-      <div class="image-and-caption">
-        <img src="img/screen-shot-00-landing.png" width="900" alt="Screen shot">
-        <div data-markdown>
-          <textarea data-template>
-            ## Launch quick start
-            Go to https://gcn.nasa.gov and click [Start streaming GCN Notices](https://gcn.nasa.gov/quickstart)
-          </textarea>
+      <section>
+        <div class="image-and-caption">
+          <img src="img/screen-shot-00-landing.png" width="900" alt="Screen shot">
+          <div data-markdown>
+            <textarea data-template>
+              ## Launch quick start
+              Go to https://gcn.nasa.gov and click [Start streaming GCN Notices](https://gcn.nasa.gov/quickstart)
+            </textarea>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section>
+        <div class="image-and-caption">
+          <img src="img/screen-shot-01-step-1.png" width="900" alt="Screen shot">
+          <div data-markdown>
+            <textarea data-template>
+              ## Step 1: Sign in / Sign up
+              Click "Sign in / Sign up" to create a GCN account.
+            </textarea>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-and-caption">
+          <img src="img/screen-shot-02-sso.png" width="900" alt="Screen shot">
+          <div data-markdown>
+            <textarea data-template>
+              ## Choose how to sign up
+              Choose any one of the following methods to sign up:
+
+              * Email and password
+              * Google
+              * Facebook
+              * (for NASA employees and affiliates) LaunchPad
+              
+              **Important: make sure you sign in the same way each time.**
+              Accounts are *not* linked.
+            </textarea>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-and-caption">
+          <img src="img/screen-shot-03-step-1-complete.png" width="900" alt="Screen shot">
+          <div data-markdown>
+            <textarea data-template>
+              ## Step 1 is done
+              Click "Next" to continue
+            </textarea>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-and-caption">
+          <img src="img/screen-shot-04-step-2.png" width="900" alt="Screen shot">
+          <div data-markdown>
+            <textarea data-template>
+              ## Step 2:<br>Select Credentials
+              Client credentials allow your scripts to interact with GCN on your behalf.
+              1. Choose a name for your credential.
+              2. Complete the CAPTCHA.
+              3. Click "Create New Credentials" to go to the next step.
+            </textarea>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-and-caption">
+          <img src="img/screen-shot-05-step-3.png" width="900" alt="Screen shot">
+          <div data-markdown>
+            <textarea data-template>
+              ## Step 3: Customize Alerts
+              Select one of these alert formats.
+              * Text: plain text key-value pairs separated by newlines.
+              * VOEvent: [VOEvent XML](http://ivoa.net/Documents/latest/VOEvent.html).
+              * Binary: 160-byte binary format. Field packing is [specific to each notice type](https://gcn.gsfc.nasa.gov/sock_pkt_def_doc.html).
+            </textarea>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-and-caption">
+          <img src="img/screen-shot-06-step-3-select-notice-types.png" width="900" alt="Screen shot">
+          <div data-markdown>
+            <textarea data-template>
+              ## Step 3 Continued: Choose Notice Types
+              Select the missions that you want to subscribe to. Expand a mission to fine-tune notice types.
+            </textarea>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="image-and-caption">
+          <img src="img/screen-shot-07-step-4.png" width="900" alt="Screen shot">
+          <div data-markdown>
+            <textarea data-template>
+              ## Step 4:<br>Get Sample Code
+              Copy and paste Python client code or download it to your computer to run.
+            </textarea>
+          </div>
+        </div>
+      </section>
+
+      <section data-markdown>
+      <textarea data-template>
+        ## Install Python client
+
+        Run this command to install with [pip](https://pip.pypa.io/):
+
+        ```
+        pip install gcn-kafka
+        ```
+
+        or this command to install with with [conda](https://docs.conda.io/):
+
+        ```
+        conda install -c conda-forge gcn-kafka
+        ```
+
+        ---
+
+        ## Connect to Kafka
+
+        ```python
+        from gcn_kafka import Consumer
+
+        consumer = Consumer(
+          client_id='fill me in',
+          client_secret='fill me in'
+        )
+        ```
+
+        ---
+
+        ## Subscribe to topics and receive alerts
+
+        ```python
+        consumer.subscribe([
+            'gcn.classic.text.LVC_INITIAL',
+            'gcn.classic.text.LVC_PRELIMINARY',
+            'gcn.classic.text.LVC_RETRACTION',
+            'gcn.classic.text.LVC_UPDATE'
+        ])
+        while True:
+            for message in consumer.consume():
+                print(message.value())
+        ```
+
+        ---
+        </textarea>
+      </section>
     </section>
 
+    <section data-markdown>
+      <textarea data-template>
+      # What’s next for GCN?
+      </textarea>
+    </section>
+    
     <section>
-      <div class="image-and-caption">
-        <img src="img/screen-shot-01-step-1.png" width="900" alt="Screen shot">
-        <div data-markdown>
+      <section data-markdown>
+        <textarea data-template>
+
+        ## We’re planning lots of enhancements in the near future:
+        * Modernization of GCN Circulars
+        * Unified schema and alert format for GCN Kafka
+        * Integrated, searchable database of Notices and Circulars (GCN Viewer)
+        * Interoperability with other transient Kafka brokers (e.g. [SCiMMA](https://scimma.org))
+        * Alerts from new missions and facilities
+        </textarea>
+      </section>
+
+      <section>
+        <section data-markdown>
           <textarea data-template>
-            ## Step 1: Sign in / Sign up
-            Click "Sign in / Sign up" to create a GCN account.
+            ## Modernization of GCN Circulars
           </textarea>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="image-and-caption">
-        <img src="img/screen-shot-02-sso.png" width="900" alt="Screen shot">
-        <div data-markdown>
-          <textarea data-template>
-            ## Choose how to sign up
-            Choose any one of the following methods to sign up:
-
-            * Email and password
-            * Google
-            * Facebook
-            * (for NASA employees and affiliates) LaunchPad
-            
-            **Important: make sure you sign in the same way each time.**
-            Accounts are *not* linked.
+        </section>
           </textarea>
+        <div class="image-and-caption">
+          <div>
+            <img src="" width="800" alt="Screen shot">
+          </div>
+          <div data-markdown>
+            <textarea data-template>
+              * Self-service subscription management
+              * Self-service submitter registration using peer endorsement system
+              * Web form for Circular submission 
+                * Astro-flavored markdown
+                  * Correct handling of Unicode
+                  * Contextual parsing of links
+              * Automatically minted DOIs and BiBTeX entries
+              * Link ORCIDs to GCN Circulars
+            </textarea>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section data-markdown>
+        <textarea data-template>
+          ## Unified schema and alert format for GCN Kafka
+          * JSON schema with common core fields
+          * Instrument/mission/observatory specific fields where needed
+          * <a href="https://github.com/nasa-gcn/gcn-schema">https://github.com/nasa-gcn/gcn-schema</a>
+          ```
+            JSON file example
+          ```
+        </textarea>
+      </section>
     </section>
-
-    <section>
-      <div class="image-and-caption">
-        <img src="img/screen-shot-03-step-1-complete.png" width="900" alt="Screen shot">
-        <div data-markdown>
-          <textarea data-template>
-            ## Step 1 is done
-            Click "Next" to continue
-          </textarea>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="image-and-caption">
-        <img src="img/screen-shot-04-step-2.png" width="900" alt="Screen shot">
-        <div data-markdown>
-          <textarea data-template>
-            ## Step 2:<br>Select Credentials
-            Client credentials allow your scripts to interact with GCN on your behalf.
-            1. Choose a name for your credential.
-            2. Complete the CAPTCHA.
-            3. Click "Create New Credentials" to go to the next step.
-          </textarea>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="image-and-caption">
-        <img src="img/screen-shot-05-step-3.png" width="900" alt="Screen shot">
-        <div data-markdown>
-          <textarea data-template>
-            ## Step 3: Customize Alerts
-            Select one of these alert formats.
-            * Text: plain text key-value pairs separated by newlines.
-            * VOEvent: [VOEvent XML](http://ivoa.net/Documents/latest/VOEvent.html).
-            * Binary: 160-byte binary format. Field packing is [specific to each notice type](https://gcn.gsfc.nasa.gov/sock_pkt_def_doc.html).
-          </textarea>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="image-and-caption">
-        <img src="img/screen-shot-06-step-3-select-notice-types.png" width="900" alt="Screen shot">
-        <div data-markdown>
-          <textarea data-template>
-            ## Step 3 Continued: Choose Notice Types
-            Select the missions that you want to subscribe to. Expand a mission to fine-tune notice types.
-          </textarea>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="image-and-caption">
-        <img src="img/screen-shot-07-step-4.png" width="900" alt="Screen shot">
-        <div data-markdown>
-          <textarea data-template>
-            ## Step 4:<br>Get Sample Code
-            Copy and paste Python client code or download it to your computer to run.
-          </textarea>
-        </div>
-      </div>
-    </section>
-
-<section data-markdown>
-<textarea data-template>
-## Install Python client
-
-Run this command to install with [pip](https://pip.pypa.io/):
-
-```
-pip install gcn-kafka
-```
-
-or this command to install with with [conda](https://docs.conda.io/):
-
-```
-conda install -c conda-forge gcn-kafka
-```
-
----
-
-## Connect to Kafka
-
-```python
-from gcn_kafka import Consumer
-
-consumer = Consumer(
-  client_id='fill me in',
-  client_secret='fill me in'
-)
-```
-
----
-
-## Subscribe to topics and receive alerts
-
-```python
-consumer.subscribe([
-    'gcn.classic.text.LVC_INITIAL',
-    'gcn.classic.text.LVC_PRELIMINARY',
-    'gcn.classic.text.LVC_RETRACTION',
-    'gcn.classic.text.LVC_UPDATE'
-])
-while True:
-    for message in consumer.consume():
-        print(message.value())
-```
-
----
-
-# What’s next for GCN?
-
----
-
-## We’re planning lots of enhancements in the near future:
-* Modernization of GCN Circulars
-  * Self-service subscription management
-  * Self-service submitter registration using peer endorsement system
-  * Correct handling of Unicode
-  * Contextual parsing of links
-  * Automatically minted DOIs and BiBTeX entries
-  * Link ORCIDs to GCN Circulars
-* Unified schema and alert format for GCN Kafka
-* Integrated, searchable database of Notices and Circulars (GCN Viewer)
-* Interoperability with other transient Kafka brokers (e.g. [SCiMMA](https://scimma.org))
-* Alerts from new missions and facilities
-</textarea>
-</section>
 
     <section class="conclusion-links">
       <h1>Thanks for listening!</h1>
