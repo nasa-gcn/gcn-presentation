@@ -633,49 +633,49 @@
     </section>
 
     <section data-markdown>
-    <textarea data-template>
-      ## Install Python client
+      <textarea data-template>
+        ## Install Python client
 
-      Run this command to install with [pip](https://pip.pypa.io/):
+        Run this command to install with [pip](https://pip.pypa.io/):
 
-      ```
-      pip install gcn-kafka
-      ```
+        ```
+        pip install gcn-kafka
+        ```
 
-      or this command to install with with [conda](https://docs.conda.io/):
+        or this command to install with with [conda](https://docs.conda.io/):
 
-      ```
-      conda install -c conda-forge gcn-kafka
-      ```
+        ```
+        conda install -c conda-forge gcn-kafka
+        ```
 
-      ---
+        ---
 
-      ## Connect to Kafka
+        ## Connect to Kafka
 
-      ```python
-      from gcn_kafka import Consumer
+        ```python
+        from gcn_kafka import Consumer
 
-      consumer = Consumer(
-        client_id='fill me in',
-        client_secret='fill me in'
-      )
-      ```
+        consumer = Consumer(
+          client_id='fill me in',
+          client_secret='fill me in'
+        )
+        ```
 
-      ---
+        ---
 
-      ## Subscribe to topics and receive alerts
+        ## Subscribe to topics and receive alerts
 
-      ```python
-      consumer.subscribe([
-          'gcn.classic.text.LVC_INITIAL',
-          'gcn.classic.text.LVC_PRELIMINARY',
-          'gcn.classic.text.LVC_RETRACTION',
-          'gcn.classic.text.LVC_UPDATE'
-      ])
-      while True:
-          for message in consumer.consume():
-              print(message.value())
-      ```
+        ```python
+        consumer.subscribe([
+            'gcn.classic.text.LVC_INITIAL',
+            'gcn.classic.text.LVC_PRELIMINARY',
+            'gcn.classic.text.LVC_RETRACTION',
+            'gcn.classic.text.LVC_UPDATE'
+        ])
+        while True:
+            for message in consumer.consume():
+                print(message.value())
+        ```
       </textarea>
     </section>
 
