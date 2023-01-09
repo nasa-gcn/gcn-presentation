@@ -528,7 +528,7 @@
             ## Launch quick start
             Go to https://gcn.nasa.gov and click [Start streaming GCN Notices](https://gcn.nasa.gov/quickstart)<br>
             <br>
-            <a href="#/27">Click to Skip Demo</a>
+            <a href="#skip-demo">(skip past demo)</a>
           </textarea>
         </div>
       </div>
@@ -632,87 +632,86 @@
       </div>
     </section>
 
-    <section data-markdown>
-      <textarea data-template>
-        ## Install Python client
+<section data-markdown>
+<textarea data-template>
+## Install Python client
 
-        Run this command to install with [pip](https://pip.pypa.io/):
+Run this command to install with [pip](https://pip.pypa.io/):
 
-        ```
-        pip install gcn-kafka
-        ```
+```
+pip install gcn-kafka
+```
 
-        or this command to install with with [conda](https://docs.conda.io/):
+or this command to install with with [conda](https://docs.conda.io/):
 
-        ```
-        conda install -c conda-forge gcn-kafka
-        ```
+```
+conda install -c conda-forge gcn-kafka
+```
 
-        ---
+---
 
-        ## Connect to Kafka
+## Connect to Kafka
 
-        ```python
-        from gcn_kafka import Consumer
+```python
+from gcn_kafka import Consumer
 
-        consumer = Consumer(
-          client_id='fill me in',
-          client_secret='fill me in'
-        )
-        ```
+consumer = Consumer(
+  client_id='fill me in',
+  client_secret='fill me in'
+)
+```
 
-        ---
+---
 
-        ## Subscribe to topics and receive alerts
+## Subscribe to topics and receive alerts
 
-        ```python
-        consumer.subscribe([
-            'gcn.classic.text.LVC_INITIAL',
-            'gcn.classic.text.LVC_PRELIMINARY',
-            'gcn.classic.text.LVC_RETRACTION',
-            'gcn.classic.text.LVC_UPDATE'
-        ])
-        while True:
-            for message in consumer.consume():
-                print(message.value())
-        ```
-      </textarea>
-    </section>
+```python
+consumer.subscribe([
+    'gcn.classic.text.LVC_INITIAL',
+    'gcn.classic.text.LVC_PRELIMINARY',
+    'gcn.classic.text.LVC_RETRACTION',
+    'gcn.classic.text.LVC_UPDATE'
+])
+while True:
+    for message in consumer.consume():
+        print(message.value())
+```
+</textarea>
+</section>
 
-    <section data-markdown>
-      <textarea data-template>
-      # What’s next for GCN?
-      </textarea>
-    </section>
-    
-    <section data-markdown>
-      <textarea data-template>
+<section data-markdown id="skip-demo">
+<textarea data-template>
 
-        ## We’re planning lots of enhancements in the near future:
-        * Modernization of GCN Circulars
-        * Unified schema and alert format for GCN Kafka
-        * Integrated, searchable database of Notices and Circulars (GCN Viewer)
-        * Interoperability with other transient Kafka brokers (e.g. [SCiMMA](https://scimma.org))
-        * Alerts from new missions and facilities
-      </textarea>
-    </section>
+# What’s next for GCN?
+
+---
+
+## We’re planning lots of enhancements in the near future:
+* Modernization of GCN Circulars
+* Unified schema and alert format for GCN Kafka
+* Integrated, searchable database of Notices and Circulars (GCN Viewer)
+* Interoperability with other transient Kafka brokers (e.g. [SCiMMA](https://scimma.org))
+* Alerts from new missions and facilities
+</textarea>
+</section>
 
     <section>
       <div class="image-and-caption">
         <div>
-          <img src="img/screen-shot-gcn-markdown.png" width="800" alt="Screen shot of GCN Circular markdown">
+          <img src="img/screen-shot-gcn-markdown.png" width="700" alt="Screen shot of GCN Circular markdown">
         </div>
         <div data-markdown>
           <textarea data-template>
             ## Modernization of GCN Circulars
-            * Self-service subscription management
-            * Self-service submitter registration using peer endorsement system
-            * Web form for Circular submission 
-              * Astro-flavored markdown
-                * Correct handling of Unicode
-                * Contextual parsing of links
-            * Automatically minted DOIs and BiBTeX entries
-            * Link ORCIDs to GCN Circulars
+            * Manage your own subscriptions
+            * Self-register to submit using peer endorsement
+            * Submit circulars by web form, API, or email
+              * Correct handling of Unicode
+              * "Astro Flavored Markdown"
+                * Annotate and cross-link references, dates, times, coordinates
+                * Embedded data tables, image attachments, math mode
+            * Automatically mint DOIs and BiBTeX entries
+            * Link your ORCID to your GCN Circulars
           </textarea>
         </div>
       </div>
@@ -725,27 +724,24 @@
         * Instrument/mission/observatory specific fields where needed
         * <a href="https://github.com/nasa-gcn/gcn-schema">https://github.com/nasa-gcn/gcn-schema</a>
 
+        JSON example (in development):
         ```
-        JSON file example (in development)
         {
           "type": "object",
           "title": "gcn.notices.icecube",
           "description": "GoldAndBronze",
           "properties": {
-              "type": {"description": "Notice type Gold or Bronze","type": ["string"]},
-              "event": {"$ref": "gcn.notices.core.EventInfo"},
-              "ra": {"$ref": "gcn.notices.core.Localization"},
-              "dec": {"$ref": "gcn.notices.core.Localization"},
-              "err": {"$ref": "gcn.notices.core.Localization"},
-              "err50": {"description": "Location uncertainty (radius, 50% containment) in units of arcmin","type": ["number"],"minimum": 0},
-              "discovery_date": {"$ref": "gcn.notices.core.AlertInfo"},
-              "discovery_time": {"$ref": "gcn.notices.core.AlertInfo"},
+              "type": {"description": "Notice type Gold or Bronze", "type": ["string"]},
+              "ra": {"description": "Localization estimate right ascension (degrees, ICRS, J2000)", "type": "number"},
+              "dec": {"description": "Localization estimate declination (degrees, ICRS, J2000)", "type": "number"},
+              "err50": {"description": "Location estimate uncertainty (radius, degrees)","type": "number"},
+              "dateobs": {"description": "Date and time of event", "type": "string", "format": "date-time"},
               "revision": {"description": "Revision number by IceCube","type": [ "number"]},
-              "energy": {"description": "Most probable neutrino energy [TeV] that would have produced an event", "type": ["number"], "minimum": 0},
-              "signalness": {"description": "Probability [dn] that this is an astrophysical signal relative to backgrounds", "type": [ "number"], "minimum": 0},
-              "far": {"description": "Rate of background events expected that are 'like this alert', would be seen by IceCube per year", "$ref": "gcn.notices.core.Statistics"
+              "energy": {"description": "Most probable neutrino energy [TeV] that would have produced an event", "type": "number"},
+              "signalness": {"description": "Probability [dn] that this is an astrophysical signal relative to backgrounds", "type": "number"},
+              "far": {"description": "Rate of background events expected that are 'like this alert', would be seen by IceCube per year", "type": "number"},
             },
-            "required": ["type", "event", "ra", "dec", "err", "err50", "discovery_date", "discovery_time", "revision", "energy", "signalness", "far"]
+            "required": ["type", "ra", "dec", "err", "err50", "dateobs" "revision", "energy", "signalness", "far"]
           }
         }
         ```
