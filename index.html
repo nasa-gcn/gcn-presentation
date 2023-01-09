@@ -526,7 +526,9 @@
         <div data-markdown>
           <textarea data-template>
             ## Launch quick start
-            Go to https://gcn.nasa.gov and click [Start streaming GCN Notices](https://gcn.nasa.gov/quickstart)
+            Go to https://gcn.nasa.gov and click [Start streaming GCN Notices](https://gcn.nasa.gov/quickstart)<br>
+            <br>
+            <a href="#skip-demo">(skip past demo)</a>
           </textarea>
         </div>
       </div>
@@ -674,8 +676,11 @@ while True:
     for message in consumer.consume():
         print(message.value())
 ```
+</textarea>
+</section>
 
----
+<section data-markdown id="skip-demo">
+<textarea data-template>
 
 # What’s next for GCN?
 
@@ -683,18 +688,65 @@ while True:
 
 ## We’re planning lots of enhancements in the near future:
 * Modernization of GCN Circulars
-  * Self-service subscription management
-  * Self-service submitter registration using peer endorsement system
-  * Correct handling of Unicode
-  * Contextual parsing of links
-  * Automatically minted DOIs and BiBTeX entries
-  * Link ORCIDs to GCN Circulars
 * Unified schema and alert format for GCN Kafka
 * Integrated, searchable database of Notices and Circulars (GCN Viewer)
 * Interoperability with other transient Kafka brokers (e.g. [SCiMMA](https://scimma.org))
 * Alerts from new missions and facilities
 </textarea>
 </section>
+
+    <section>
+      <div class="image-and-caption">
+        <div>
+          <img src="img/screen-shot-gcn-markdown.png" width="700" alt="Screen shot of GCN Circular markdown">
+        </div>
+        <div data-markdown>
+          <textarea data-template>
+            ## Modernization of GCN Circulars
+            * Manage your own subscriptions
+            * Self-register to submit using peer endorsement
+            * Submit circulars by web form, API, or email
+              * Correct handling of Unicode
+              * "Astro Flavored Markdown"
+                * Annotate and cross-link references, dates, times, coordinates
+                * Embedded data tables, image attachments, math mode
+            * Automatically mint DOIs and BiBTeX entries
+            * Link your ORCID to your GCN Circulars
+          </textarea>
+        </div>
+      </div>
+    </section>
+
+    <section data-markdown>
+      <textarea data-template>
+        ## Unified schema and alert format for GCN Kafka
+        * JSON schema with common core fields
+        * Instrument/mission/observatory specific fields where needed
+        * <a href="https://github.com/nasa-gcn/gcn-schema">https://github.com/nasa-gcn/gcn-schema</a>
+
+        JSON example (in development):
+        ```
+        {
+          "type": "object",
+          "title": "gcn.notices.icecube",
+          "description": "GoldAndBronze",
+          "properties": {
+              "type": {"description": "Notice type Gold or Bronze", "type": ["string"]},
+              "ra": {"description": "Localization estimate right ascension (degrees, ICRS, J2000)", "type": "number"},
+              "dec": {"description": "Localization estimate declination (degrees, ICRS, J2000)", "type": "number"},
+              "err50": {"description": "Location estimate uncertainty (radius, degrees)","type": "number"},
+              "dateobs": {"description": "Date and time of event", "type": "string", "format": "date-time"},
+              "revision": {"description": "Revision number by IceCube","type": [ "number"]},
+              "energy": {"description": "Most probable neutrino energy [TeV] that would have produced an event", "type": "number"},
+              "signalness": {"description": "Probability [dn] that this is an astrophysical signal relative to backgrounds", "type": "number"},
+              "far": {"description": "Rate of background events expected that are 'like this alert', would be seen by IceCube per year", "type": "number"},
+            },
+            "required": ["type", "ra", "dec", "err", "err50", "dateobs" "revision", "energy", "signalness", "far"]
+          }
+        }
+        ```
+      </textarea>
+    </section>
 
     <section class="conclusion-links">
       <h1>Thanks for listening!</h1>
