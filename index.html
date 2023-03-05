@@ -493,7 +493,7 @@
         />
         <div data-markdown>
           <textarea data-template>
-            ## ✨New!✨ Self-service email alerts
+            ## Self-service email alerts
             Email is still the most popular way to receive GCN Notices.
             * Previously, users had to contact Scott Barthelmy to create or modify their subscriptions manually.
             * Now, you can manage your email subscriptions yourself through our new web site.
@@ -507,12 +507,12 @@
       <textarea data-template>
         ## What’s staying the same?
         GCN Classic is not going away any time soon. The following are still fully supported:
-        * GCN Notices legacy delivery mechanisms (email, socket, VOEvent Transport Protocol)
+        * GCN Notices legacy delivery mechanisms (email, socket, VOEvent Transport Protocol) of all current notice types
         * GCN Circulars submission and delivery via email
         * The old GCN Classic web site, https://gcn.gsfc.nasa.gov
-        * The live archives of [GCN Notices](https://gcn.gsfc.nasa.gov/burst_info.html) and [GCN Circulars](https://gcn.gsfc.nasa.gov/gcn3_archive.html) on the old web site
-
-        However, starting later this year new features and notice types will only be available on the new web site and GCN Kafka.
+        * The live archives of [GCN Notices](https://gcn.gsfc.nasa.gov/burst_info.html) on the old web site
+      
+        New features and notice types are only available on the new web site and GCN Kafka
       </textarea>
     </section>
 
@@ -622,11 +622,13 @@
 
     <section>
       <div class="image-and-caption">
-        <img src="img/screen-shot-07-step-4.png" width="900" alt="Screen shot">
+        <img src="img/screen-shot-07-step-4.png" width="850" alt="Screen shot">
         <div data-markdown>
           <textarea data-template>
             ## Step 4:<br>Get Sample Code
-            Copy and paste Python client code or download it to your computer to run.
+            Copy and paste Python client code or download it to your computer to run. <br>
+            <br>
+            Client code sample also availble in Node.js (ESM), Node.js (Common.JS), C/C++, C#.
           </textarea>
         </div>
       </div>
@@ -682,6 +684,31 @@ while True:
 <section data-markdown id="skip-demo">
 <textarea data-template>
 
+# New GCN Notice Producers
+
+</textarea>
+</section>
+
+<section>
+  <div class="image-and-caption">
+    <div>
+      <img src="img/screen-shot-new-producers.png" width="800" alt="Screen shot of New Notice Producers Documentation">
+    </div>
+    <div data-markdown>
+      <textarea data-template>
+        ## Distributing New Notice Types
+        * All new notice topics will only be distributed by GCN Kafka
+        * [Step-by-step instruction](https://gcn.nasa.gov/docs/producers)
+        * Preferred notice format is JSON
+        * [Unified JSON schema](https://github.com/nasa-gcn/gcn-schema) in development
+      </textarea>
+    </div>
+  </div>
+</section>
+
+<section data-markdown>
+<textarea data-template>
+
 # What’s next for GCN?
 
 ---
@@ -695,6 +722,29 @@ while True:
 </textarea>
 </section>
 
+<section>
+  <div class="image-and-caption">
+    <div>
+      <img src="img/screen-shot-gcn-markdown.png" width="700" alt="Screen shot of GCN Circular web form">
+    </div>
+    <div data-markdown>
+      <textarea data-template>
+        ## Modernization of GCN Circulars (Coming Soon!)
+        * Manage your own subscriptions
+        * Self-register to submit using peer endorsement
+        * Submit circulars by web form, API, or email
+        * New searchable archive of Circulars
+        * Planned enhancements
+          * "Astro-Flavored Markdown"
+          * Automatically mint DOIs and BiBTeX entries
+          * Link your ORCID to your GCN Circulars
+
+      </textarea>
+    </div>
+  </div>
+</section>
+
+<!---
     <section>
       <div class="image-and-caption">
         <div>
@@ -716,7 +766,7 @@ while True:
         </div>
       </div>
     </section>
-
+  -->
     <section data-markdown>
       <textarea data-template>
         ## Unified schema and alert format for GCN Kafka
@@ -725,6 +775,65 @@ while True:
         * <a href="https://github.com/nasa-gcn/gcn-schema">https://github.com/nasa-gcn/gcn-schema</a>
 
         JSON example (in development):
+        ```
+        {
+          "$id": "gcn/notices/icecube/amon/GoldAndBronze.schema.json",
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "title": "GoldAndBronze",
+          "description": "GoldAndBronze events",
+          "properties": {
+            "type": {
+              "description": "Notice type Gold or Bronze",
+              "type": "string"
+            },
+            "event": {
+              "$ref": "gcn/notices/core/EventInfo.schema.json"
+            },
+            "localization": {
+              "$ref": "gcn/notices/core/Localization.schema.json"
+            },
+            "err50": {
+              "description": "Location uncertainty (radius, 50% containment) in units of arcmin",
+              "type": "number",
+              "minimum": 0
+            },
+            "discovery_datetime": {
+              "$ref": "gcn/notices/core/DateTime.schema.json"
+            },
+            "revision": {
+              "description": "Revision number by IceCube",
+              "type": "number"
+            },
+            "energy": {
+              "description": "Most probable neutrino energy [TeV] that would have produced an event",
+              "type": "number",
+              "minimum": 0
+            },
+            "signalness": {
+              "description": "Probability [dn] that this is an astrophysical signal relative to backgrounds",
+              "type": "number",
+              "minimum": 0
+            },
+            "far": {
+              "description": "Rate of background events expected that are 'like this alert', would be seen by IceCube per year",
+              "$ref": "gcn/notices/core/Statistics.schema.json"
+            }
+          },
+          "required": [
+            "type",
+            "event",
+            "localization",
+            "err50",
+            "discovery_datetime",
+            "revision",
+            "energy",
+            "signalness",
+            "far"
+          ]
+        }
+        ```
+<!--
         ```
         {
           "type": "object",
@@ -745,6 +854,7 @@ while True:
           }
         }
         ```
+-->
       </textarea>
     </section>
 
