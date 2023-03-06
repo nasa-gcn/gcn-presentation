@@ -724,60 +724,40 @@ while True:
         JSON example (in development):
         ```
         {
-          "$id": "gcn/notices/icecube/amon/GoldAndBronze.schema.json",
+          "$id": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/fermi/gbm/Trigger.schema.json",
           "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "title": "Trigger",
+          "description": "fermi gbm Trigger",
           "type": "object",
-          "title": "GoldAndBronze",
-          "description": "GoldAndBronze events",
           "properties": {
-            "type": {
-              "description": "Notice type Gold or Bronze",
-              "type": "string"
+            "alert_info": {
+              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/AlertInfo.schema.json"
             },
-            "event": {
-              "$ref": "gcn/notices/core/EventInfo.schema.json"
+            "identifiers": {
+              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/Identifiers.schema.json"
+            },
+            "event_info": {
+              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/EventInfo.schema.json"
+            },
+            "datetime": {
+              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/DateTime.schema.json"
             },
             "localization": {
-              "$ref": "gcn/notices/core/Localization.schema.json"
+              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/Localization.schema.json"
             },
-            "err50": {
-              "description": "Location uncertainty (radius, 50% containment) in units of arcmin",
-              "type": "number",
-              "minimum": 0
+            "statistics": {
+              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/Statistics.schema.json"
             },
-            "discovery_datetime": {
-              "$ref": "gcn/notices/core/DateTime.schema.json"
+            "hardness_ratio": {
+              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/HardnessRatio.schema.json"
             },
-            "revision": {
-              "description": "Revision number by IceCube",
-              "type": "number"
+            "comments": {
+              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/Comments.schema.json"
             },
-            "energy": {
-              "description": "Most probable neutrino energy [TeV] that would have produced an event",
-              "type": "number",
-              "minimum": 0
-            },
-            "signalness": {
-              "description": "Probability [dn] that this is an astrophysical signal relative to backgrounds",
-              "type": "number",
-              "minimum": 0
-            },
-            "far": {
-              "description": "Rate of background events expected that are 'like this alert', would be seen by IceCube per year",
-              "$ref": "gcn/notices/core/Statistics.schema.json"
+            "specific": {
+              "$ref": "Specific.schema.json"
             }
-          },
-          "required": [
-            "type",
-            "event",
-            "localization",
-            "err50",
-            "discovery_datetime",
-            "revision",
-            "energy",
-            "signalness",
-            "far"
-          ]
+          }
         }
         ```
 
