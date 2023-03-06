@@ -675,7 +675,7 @@ consumer.subscribe([
     'gcn.classic.text.LVC_UPDATE'
 ])
 while True:
-    for message in consumer.consume():
+    for message in consumer.consume(timeout=1):
         print(message.value())
 ```
 </textarea>
