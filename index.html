@@ -336,12 +336,14 @@
         <div data-markdown>
           <textarea data-template>
             ## What is special about GCN's Kafka cluster?
-            * It's not special at all: it's an ordinary, stock, 3-broker Kafka cluster
-              * No custom auth extensions to side-load into the server
-              * No vendor lock-in: we could use Apache Kafka, Confluent, or Amazon MSK
-            * We use OpenID Connect for single sign on
-              * We use the same identity provider for our web site and our Kafka broker
-              * We have a straightforward path to adopting SciTokens (an HPC single sign on infrastructure based on OpenID Connect, adopted by LIGO)
+            **It's special because it's so ordinary!** It's a plain 3-broker Kafka cluster
+            * No custom auth extensions to side-load into the server
+            * No vendor lock-in: we use [Confluent Platform](https://www.confluent.io/product/confluent-platform/), but we could use open-source [Apache Kafka](https://kafka.apache.org) or fully managed solutions like [Confluent Cloud](https://www.confluent.io/confluent-cloud/) or [Amazon MSK](https://aws.amazon.com/msk/)
+
+            We use standard [OpenID Connect (OIDC)](https://openid.net/connect/) for single sign-on
+            * We use [Amazon Cognito](https://aws.amazon.com/cognito/), one of many off-the-shelf OIDC auth solutions
+            * We use the same auth system across our web site and our Kafka broker
+            * We have a straightforward path to adopting [SciTokens](https://scitokens.org) (an HPC single sign-on infrastructure based on OpenID Connect, adopted by LIGO)
           </textarea>
         </div>
       </section>
