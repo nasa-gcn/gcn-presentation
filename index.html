@@ -300,7 +300,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section data-visibility="hidden">
         <div class="image-and-caption">
           <img
             src="img/Apache_kafka.svg"
@@ -349,7 +349,7 @@
       </section>
     </section>
 
-    <section class="why-switch">
+    <section class="why-switch" data-visibility="hidden">
       <h2>Why switch to the new GCN?</h2>
       <table>
         <thead>
@@ -461,7 +461,7 @@
           </div>
         </div>
       </section>
-      <section>
+      <section data-visibility="hidden">
         <div class="image-and-caption">
           <img
               src="img/tech-stack.svg"
@@ -486,7 +486,7 @@
       </section>
     </section>
 
-    <section>
+    <section data-visibility="hidden">
       <div class="image-and-caption">
         <img
           src="img/screen-shot-email.png"
@@ -508,6 +508,52 @@
     <section>
       <div class="image-and-caption">
         <img
+          src="img/screen-shot-quickstart.png"
+          alt="Screen shot of GCN Classic over Kafka settings"
+          width="700"
+        />
+        <div>
+          <h2>Start streaming GCN Notices</h2>
+          <p>at <a href="https://gcn.nasa.gov/quickstart">https://gcn.nasa.gov/quickstart</a></p>
+          <ul>
+            <li>Start streaming GCN noticices in seconds!</li>
+            <li>Receive alerts from Fermi, Swift, LIGO/Virgo/KAGRA<span style="color: red">*</span>, IceCube, +many more</li>
+            <li>Use our "quick start" interface to:
+              <ul>
+                <li>Sign in / sign up</li>
+                <li>Create API credentials</li>
+                <li>Customize your alerts</li>
+                <li>Generate Kafka client code for your favorite language<br/>(Python, JS, C++, C#, ...)</li>
+              </ul>
+            </li>
+          </ul>
+          <p><small><span style="color: red">*</span> see also <a href="https://emfollow.docs.ligo.org/userguide/tutorial/receiving/gcn.html">https://emfollow.docs.ligo.org/userguide/tutorial/receiving/gcn.html</a></small></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="image-and-caption">
+        <img
+          src="img/lvk-user-guide.png"
+          alt="Screen shot of LVK User Guide"
+          width="700"
+        />
+        <div data-markdown>
+          <textarea data-template>
+            ## New JSON alerts over Kafka
+            Several missions and experiments are starting to send us alerts in JSON.
+            * LIGO, Virgo and KAGRA are publishing JSON records to GCN a Kafka topic called `igwn.gwalert`.
+              * Classic notice types (VOEvent, text, binary) still supported
+              * See [LIGO/Virgo/KAGRA Public Alerts User Guide](https://emfollow.docs.ligo.org/) for details
+          </textarea>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="image-and-caption">
+        <img
           src="img/screen-shot-circulars-archive.png"
           alt="Screen shot of GCN Circulars archive"
           width="800"
@@ -521,14 +567,12 @@
             * Manage your own email subscriptions.
             * Enroll yourself and your colleagues to submit Circulars with arXiv-style peer endorsements.
             * Submit Circulars with our [new Web form](https://gcn.nasa.gov/circulars/new), or continue to submit by email.
-
-            [(skip ahead for more on GCN Circulars)](#the-new-gcn-circulars)
           </textarea>
         </div>
       </div>
     </section>
 
-    <section data-markdown>
+    <section data-markdown data-visibility="hidden">
       <textarea data-template>
         ## What’s staying the same?
         GCN Classic is not going away any time soon. The following are still fully supported:
@@ -541,11 +585,11 @@
       </textarea>
     </section>
 
-    <section>
+    <section data-visibility="hidden">
       <h1>Streaming GCN<br>Notices in Python</h1>
     </section>
 
-    <section>
+    <section data-visibility="hidden">
       <div class="image-and-caption">
         <img src="img/screen-shot-streaming-notices-00-landing.png" width="900" alt="Screen shot">
         <div data-markdown>
@@ -559,7 +603,7 @@
       </div>
     </section>
 
-    <section>
+    <section data-visibility="hidden">
       <div class="image-and-caption">
         <img src="img/screen-shot-streaming-notices-01-step-1.png" width="900" alt="Screen shot">
         <div data-markdown>
@@ -571,7 +615,7 @@
       </div>
     </section>
 
-    <section>
+    <section data-visibility="hidden">
       <div class="image-and-caption">
         <img src="img/screen-shot-streaming-notices-02-sso.png" width="900" alt="Screen shot">
         <div data-markdown>
@@ -591,7 +635,7 @@
       </div>
     </section>
 
-    <section>
+    <section data-visibility="hidden">
       <div class="image-and-caption">
         <img src="img/screen-shot-streaming-notices-03-step-1-complete.png" width="900" alt="Screen shot">
         <div data-markdown>
@@ -603,7 +647,7 @@
       </div>
     </section>
 
-    <section>
+    <section data-visibility="hidden">
       <div class="image-and-caption">
         <img src="img/screen-shot-streaming-notices-04-step-2.png" width="900" alt="Screen shot">
         <div data-markdown>
@@ -618,7 +662,7 @@
       </div>
     </section>
 
-    <section>
+    <section data-visibility="hidden">
       <div class="image-and-caption">
         <img src="img/screen-shot-streaming-notices-05-step-3.png" width="900" alt="Screen shot">
         <div data-markdown>
@@ -633,7 +677,7 @@
       </div>
     </section>
 
-    <section>
+    <section data-visibility="hidden">
       <div class="image-and-caption">
         <img src="img/screen-shot-streaming-notices-06-step-3-select-notice-types.png" width="900" alt="Screen shot">
         <div data-markdown>
@@ -645,7 +689,7 @@
       </div>
     </section>
 
-    <section>
+    <section data-visibility="hidden">
       <div class="image-and-caption">
         <img src="img/screen-shot-streaming-notices-07-step-4.png" width="900" alt="Screen shot">
         <div data-markdown>
@@ -659,7 +703,7 @@
       </div>
     </section>
 
-<section data-markdown>
+<section data-markdown data-visibility="hidden">
 <textarea data-template>
 ## Install Python client
 
@@ -706,13 +750,13 @@ while True:
 </textarea>
 </section>
 
-<section data-markdown id="skip-demo">
+<section data-markdown id="skip-demo" data-visibility="hidden">
 <textarea data-template>
 # The New GCN Circulars
 </textarea>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-circulars-detail.png" width="800" alt="Screen shot of a GCN Circular">
     <div data-markdown>
@@ -729,7 +773,7 @@ while True:
   </div>
 </section>
 
-<section data-markdown>
+<section data-markdown data-visibility="hidden">
 <textarea>
 
 ## Migrating GCN Circulars from GCN Classic
@@ -787,11 +831,11 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
 </textarea>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <h1>Tutorial:<br/>Receiving GCN Circulars</h1>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-signin-01.png" width="900" alt="Screen shot of a GCN Circulars sign in">
     <div data-markdown>
@@ -803,7 +847,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-streaming-notices-02-sso.png" width="900" alt="Screen shot">
     <div data-markdown>
@@ -823,7 +867,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-signin-02.png" width="900" alt="Screen shot">
     <div data-markdown>
@@ -836,7 +880,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-email-notifications.png" width="900" alt="Screen shot">
     <div data-markdown>
@@ -850,11 +894,11 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <h1>Tutorial:<br/>Submitting GCN Circulars</h1>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-circulars-archive.png" width="900" alt="Screen shot of a GCN Circulars archive">
     <div data-markdown>
@@ -871,7 +915,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-circulars-submit-sign-in.png" width="900" alt="Screen shot of a GCN Circulars submit sign in">
     <div data-markdown>
@@ -887,7 +931,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-circulars-peer-endorsement-00.png" width="900" alt="Screen shot of a GCN Circulars peer endorsement process">
     <div data-markdown>
@@ -902,7 +946,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-circulars-peer-endorsement-01.png" width="900" alt="Screen shot of a GCN Circulars peer endorsement process">
     <div data-markdown>
@@ -921,7 +965,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-circulars-peer-endorsement-02.png" width="900" alt="Screen shot of a GCN Circulars peer endorsement process">
     <div data-markdown>
@@ -933,7 +977,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-circulars-peer-endorsement-03.png" width="900" alt="Screen shot of a GCN Circulars peer endorsement process">
     <div data-markdown>
@@ -949,7 +993,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-circulars-peer-endorsement-04.png" width="900" alt="Screen shot of a GCN Circulars peer endorsement process">
     <div data-markdown>
@@ -963,7 +1007,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-profile.png" width="900" alt="Screen shot of a GCN Circulars submit">
     <div data-markdown>
@@ -980,7 +1024,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
   </div>
 </section>
 
-<section>
+<section data-visibility="hidden">
   <div class="image-and-caption">
     <img src="img/screen-shot-circulars-submit.png" width="900" alt="Screen shot of a GCN Circulars submit">
     <div data-markdown>
@@ -1101,6 +1145,21 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
       </textarea>
     </section>
 
+    <section data-markdown>
+      <textarea data-template>
+        ## NASA's Time Domain and Multimessenger Vision
+        <small>Adapted from [V. Connaughton's slides](https://pcos.gsfc.nasa.gov/physpag/meetings/HEAD2023/presentations/TDAMM_HEAD_230326_VC.pdf)</small>
+
+        NASA's [Physics of the Cosmos (PhysCOS) program](https://pcos.gsfc.nasa.gov) is studying the organizational, programmatic, and technical aspects of a future Time-Domain and MultiMessenger (TDAMM) General Observing Facility (GOF). **GCN is to play a vital role.** The GOF would facilitate:
+
+        * On a timescale of **seconds to hours**: alert systems (e.g. **GCN**); information flows between science, mission, and operations; observing schedules and science timelines
+        * On a timescale of **hours to months**: coordinated targets of opportunity, coordinated observation planning
+        * On a timescale of **years**: Strategic coordination of planning, missions, interfaces, and tools.
+
+        For more information, contact the study leads, [Brian Humensky and Chris Roberts](mailto:thomas.b.humensky@nasa.gov,christopher.j.roberts@nasa.gov).
+      </textarea>
+    </section>
+    
     <section class="conclusion-links">
       <h1>Thanks for listening!</h1>
       <p>Web site: <a href="https://gcn.nasa.gov/">https://gcn.nasa.gov</a></p>
