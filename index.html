@@ -700,6 +700,9 @@ consumer.subscribe([
     'gcn.classic.text.LVC_UPDATE'
 ])
 while True:
+    if message.error():
+        print(message.error())
+        continue
     for message in consumer.consume(timeout=1):
         print(message.value())
 ```
