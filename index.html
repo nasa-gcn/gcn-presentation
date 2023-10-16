@@ -1048,62 +1048,31 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
         * All new notice topics will only be distributed by GCN Kafka
         * See [step-by-step instructions](https://gcn.nasa.gov/docs/producers)
         * Preferred notice format is JSON
-        * [Unified JSON schema](https://github.com/nasa-gcn/gcn-schema) in development
+        * [Unified JSON schema](https://github.com/nasa-gcn/gcn-schema) provides common core
       </textarea>
     </div>
   </div>
 </section>
 
-    <section data-markdown>
+<section>
+  <div class="image-and-caption">
+    <div>
+      <img src="img/screen-shot-schema-browser.png" width="800" alt="Screen shot of Notices Schema Browser">
+    </div>
+    <div data-markdown>
       <textarea data-template>
         ## Unified schema and alert format for GCN Kafka
         * JSON schema with common core fields
         * Instrument/mission/observatory specific fields where needed
+        * <a href="https://gcn.nasa.gov/docs/notices/schema">Schema development documentation</a>
+        * <a href="https://gcn.nasa.gov/docs/schema">Schema Browser</a>
         * <a href="https://github.com/nasa-gcn/gcn-schema">https://github.com/nasa-gcn/gcn-schema</a>
-
-        JSON example (in development):
-        ```
-        {
-          "$id": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/fermi/gbm/Trigger.schema.json",
-          "$schema": "https://json-schema.org/draft/2020-12/schema",
-          "title": "Trigger",
-          "description": "fermi gbm Trigger",
-          "type": "object",
-          "properties": {
-            "alert_info": {
-              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/AlertInfo.schema.json"
-            },
-            "identifiers": {
-              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/Identifiers.schema.json"
-            },
-            "event_info": {
-              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/EventInfo.schema.json"
-            },
-            "datetime": {
-              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/DateTime.schema.json"
-            },
-            "localization": {
-              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/Localization.schema.json"
-            },
-            "statistics": {
-              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/Statistics.schema.json"
-            },
-            "hardness_ratio": {
-              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/HardnessRatio.schema.json"
-            },
-            "comments": {
-              "$ref": "https://github.com/nasa-gcn/gcn-schema/blob/main/gcn/notices/core/Comments.schema.json"
-            },
-            "specific": {
-              "$ref": "Specific.schema.json"
-            }
-          }
-        }
-        ```
-
       </textarea>
-    </section>
+    </div>
+  </div>
+</section>
 
+  </section>
     <section class="conclusion-links">
       <h1>Thanks for listening!</h1>
       <p>Web site: <a href="https://gcn.nasa.gov/">https://gcn.nasa.gov</a></p>
