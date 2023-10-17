@@ -1,6 +1,6 @@
 # GCN Presentation
 
-View at https://nasa-gcn.github.io/gcn-presentation/
+View online at https://nasa-gcn.github.io/gcn-presentation/ or download PDF at https://nasa-gcn.github.io/gcn-presentation/index.pdf.
 
 ## Title
 
