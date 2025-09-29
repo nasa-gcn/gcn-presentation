@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "@nasa-gcn/gcn-presentation",
+  "description": "GCN presentation in Reveal.js",
+  "repository": {
+    "type": "git",
+    "url": "github:nasa-gcn/gcn-presentation"
+  },
+  "scripts": {
+    "pdf": "node pdf.ts"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.22.3"
+  }
+}
