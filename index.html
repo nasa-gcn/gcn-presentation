@@ -187,6 +187,7 @@
         />
         * BACODINE provided new alert formats (phone, email, socket, and pager)
         * New instruments and transient types led to the Gamma-ray Coordinates Network
+        * In 1997, GCN added a new data product: GCN Circulars
       </textarea>
     </section>
 
@@ -210,7 +211,7 @@
     </section>
 
     <section>
-      <h2>There are two kinds of GCN data products:</h2>
+      <h2>GCN has two data products:</h2>
       <div class="split-column">
         <div data-markdown>
           <textarea data-template>
@@ -296,7 +297,7 @@
               ## The New GCN is built on Kafka
               * **GCN Classic** provides three formats over _three custom protocols_
               * **GCN Classic over Kafka** provides all three formats over _one standard protocol_: Apache Kafka
-              * **GCN Kafka** will transition over the next few years to streaming all data in JSON format over Kafka (Notices and Circulars)
+              * **GCN Kafka** has started transitioning to streaming all data in JSON format over Kafka (Notices and Circulars)
             </textarea>
           </div>
         </div>
@@ -454,7 +455,7 @@
               * Updated look and feel
               * More accessible, based on [US Web Design System](https://designsystem.digital.gov)
               * Single sign on with:
-                * email and password
+                * Email and password
                 * Google
                 * Facebook
                 * LaunchPad (for NASA employees and affiliates)
@@ -480,7 +481,7 @@
                 * Single codebase for server & client
               * Early adopters of [Remix](https://remix.run/), a full-stack [React](https://reactjs.org) framework
               * Continuously deployed on [AWS Lambda](https://aws.amazon.com/lambda/) using [GitHub Actions](https://docs.github.com/en/actions) and [Architect](https://arc.codes)
-              * 100% open source — contributions welcome! https://github.com/nasa-gcn/gcn.nasa.gov
+              * 100% open source — [contributions welcome](https://gcn.nasa.gov/docs/contributing)!
             </textarea>
           </div>
         </div>
@@ -724,10 +725,26 @@ while True:
         ## Improvements to Circulars
         The new GCN Circulars are:
         * **Self service**: Manage your own subscriptions and settings.
+        * **Versioned**: Circulars can be updated and corrected, with a full version history.
         * **More welcoming**: It's easier than ever for educators and amateurs to join the community and submit a GCN Circular.
         * **Fast**: Email notifications are distributed in parallel to all users within seconds.
         * **Robust**: Circulars run on highly available, distributed cloud services.
         * **Sustainable**: GCN Circulars are robustly funded by NASA and are part of the open source GCN project.
+      </textarea>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="image-and-caption">
+    <img src="img/screen-shot-circulars-archive.png" width="800" alt="Screenshot of the GCN Circulars archive">
+    <div data-markdown>
+      <textarea data-template>
+        ## A New Circulars Archive
+        It's easier than ever to browse circulars with new archive features.
+          * Use Lucene query syntax for [advanced searches](https://gcn.nasa.gov/docs/circulars/archive#advanced-search)
+          * Filter results by date range
+        * **Event View:** View all Circulars related to a specific event
       </textarea>
     </div>
   </div>
@@ -1019,7 +1036,7 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
       * Link your [ORCID](https://orcid.org) to your account
       * DOIs and BiBTeX entries for all Circulars
       * Browse Circulars by source class
-      * Data extraction via Natural Language Models (Sharma et al., in prep)
+      * Data extraction via Natural Language Processing ([Sharma et al. 2025](https://arxiv.org/abs/2511.14858v1))
       </textarea>
     </div>
   </div>
@@ -1030,10 +1047,9 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
 
 ## More enhancements are coming to GCN:
 * New alert types and alerts from new missions and facilities
-  * New Kafka-only notices for Swift-BAT/GUANO, SVOM, and IceCube
-  * Many others in development including Super-K, Fermi-GBM, CHIME, and BOOM
+  * New Kafka-only Notices for Swift-BAT/GUANO, SVOM, IceCube, Einstein Probe, and Super-Kamiokande
+  * Many others in development including CHIME, DSA-110, HEASARC, KM3NeT, Swift, and Fermi
 * Unified schema and alert format for GCN Kafka
-* Integrated, searchable database of Notices and Circulars (GCN Viewer)
 * Interoperability with other transient Kafka brokers (e.g. [SCiMMA](https://scimma.org))
 </textarea>
 </section>
@@ -1047,9 +1063,9 @@ On April 17, 2023, GCN Circulars moved from the old site to the new one. If you 
       <textarea data-template>
         ## Create new Notice types
         * All new notice topics will only be distributed by GCN Kafka
-        * See [step-by-step instructions](https://gcn.nasa.gov/docs/producers)
-        * Preferred notice format is JSON
-        * [Unified JSON schema](https://github.com/nasa-gcn/gcn-schema) provides common core
+        * To begin producing Notices for your project, see [step-by-step instructions](https://gcn.nasa.gov/docs/notices/producers)
+        * Preferred Notice format is JSON
+        * [Unified JSON schema](https://github.com/nasa-gcn/gcn-schema) provides a common core format
       </textarea>
     </div>
   </div>
