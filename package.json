@@ -11,6 +11,6 @@
     "pdf": "node pdf.ts"
   },
   "devDependencies": {
-    "puppeteer": "^24.22.3"
+    "puppeteer": "^25.6.0"
   }
 }
